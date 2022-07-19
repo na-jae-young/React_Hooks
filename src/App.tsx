@@ -64,8 +64,10 @@ function App() {
   setTimeout(()=>{titleUpdate("Home")},5000)
 
   const potato:any = useRef();  // useRef   연동 할때 사용 and id로 활용 
-  setTimeout(()=> {potato.current.focus(); console.log(potato.currnet)}, 5000)
+  const check_potato = () =>{ setTimeout(()=> {potato.current.focus(); console.log(potato.current)}, 5000)}
+  useEffect(check_potato,[])
 
+  
   return (
     <div className='App'>
 
