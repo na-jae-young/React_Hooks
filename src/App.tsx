@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import logo from './logo.svg';
 import './App.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////useInput 
@@ -49,6 +49,8 @@ const useTitle = (initialTitle:string) => {
   useEffect(updateTitle,[title])
   return setTitle
 }
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function App() {
 
@@ -60,6 +62,9 @@ function App() {
 
   const titleUpdate = useTitle("Loading....")   //useTitle
   setTimeout(()=>{titleUpdate("Home")},5000)
+
+  const potato:any = useRef();  // useRef   연동 할때 사용 and id로 활용 
+  setTimeout(()=> {potato.current.focus(); console.log(potato.currnet)}, 5000)
 
   return (
     <div className='App'>
@@ -78,7 +83,7 @@ function App() {
       </div>
 
       <div>
-
+          <input ref={potato} placeholder="lala" />
       </div>
 
     </div>
