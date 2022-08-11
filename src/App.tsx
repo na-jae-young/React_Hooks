@@ -53,7 +53,7 @@ const useTitle = (initialTitle:string) => {
   return setTitle
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////useConfirm
-const useConfirm = (message:string = "" , onConfirm:any, onCancel:any ) => {
+const useConfirm = (message:string = "" , onConfirm:any , onCancel:any ) => {
   if(!onConfirm || typeof onConfirm !== "function"){
     return;
   }
